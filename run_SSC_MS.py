@@ -45,7 +45,8 @@ for i in range(0,numSamples):
 			hasOutlier = False #If data has outliers
 			rho = 0.7 #relaxation variable used for determining how many rows in C to keep (after applying ADMM)
 			
-			missrate1,C1,grps1 = SSC(X,r,s,alpha,rho,isAffine,hasOutlier)
+			missrate1,C1,grps1 = SSC(X,r,isAffine,alpha,hasOutlier,rho,s)
+
 			
 			#Keep track of missrate by class/group
 			missrateTotal1[n-1,num[n-1]] = missrate1
